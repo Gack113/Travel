@@ -13,3 +13,11 @@
 
 Route::get('/', 'PageController@index')->name('Home');
 Route::get('/{slug}', 'PageController@show')->name('show');
+
+Route::group(['prefix' => 'auth'], function () {
+    Auth::routes();
+});
+
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
+    Route::get('/dashboard', 'DashBoardController@index')->name('dashboard');
+});

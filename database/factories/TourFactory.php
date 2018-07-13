@@ -12,6 +12,7 @@ $factory->define(App\Tour::class, function (Faker $faker) {
         'fare' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 10000),
         'schedule' => $faker->country .' to '. $faker->country,
         'booked' => random_int(5,140),
+        'discount' => random_int(5,50),
         'description' => $faker->text,
         'is_active' => $faker->boolean
     ];
