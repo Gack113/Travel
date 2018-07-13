@@ -8,16 +8,19 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function index() {
-        $outstandingTour = Tour::orderBy('booked', 'DESC')
+        $outstandingTour = Tour::where('is_active', 1)
+                                ->orderBy('booked', 'DESC')
                                 ->take(12)
                                 ->get();
 
-        $recentlyTour = Tour::orderBy('created_at', 'DESC')
-                            ->take(10)
+        $recentlyTour = Tour::where('is_active', 1)
+                            ->orderBy('created_at', 'DESC')
+                            ->take(9)
                             ->get();
         
-        $discountTours = Tour::orderBy('created_at', 'DESC')
-                            ->take(10)
+        $discountTours = Tour::where('is_active', 1)
+                            ->orderBy('discount', 'DESC')
+                            ->take(5)
                             ->get();
 
         return view("page/index", [
@@ -27,7 +30,7 @@ class PageController extends Controller
                     ]);
     }
     
-    public function show(){
+    public function show() {
         return 1;
     }
 }
