@@ -33,8 +33,8 @@
 		</head>
 </head>
 <body>
-	@include('share/header')
-	@yield('content')
+	@include('share/header')		 
+		@yield('content')		
 	@include('share/footer')
 
 	<script src="js/vendor/jquery-2.2.4.min.js"></script>
