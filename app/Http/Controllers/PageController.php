@@ -9,7 +9,7 @@ class PageController extends Controller
 {
     public function index(){
         $outstandingTour = Tour::take(10)->get();
-        return $outstandingTour;
+        return View('page.index')->with('outstandingTour',$outstandingTour);
     }
     
     public function show(){
