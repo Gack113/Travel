@@ -11,7 +11,7 @@ class ToursTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Tour::class, 50)->create()->each(function ($t) {
+        factory(App\Tour::class, 100)->create()->each(function ($t) {
             $t->tour_detail()->save(factory(App\TourDetail::class)->make());
         });
     }
