@@ -33,16 +33,8 @@
 		</head>
 </head>
 <body>
-	@include('share/header')
-	<div class="row">
-		 <div class="col-md-8">
-		    @yield('content')
-		 </div>
-		 <div class="col-md-4">
-		 @include('share/rightContent')
-		 </div>
-	</div>
-	
+	@include('share/header')		 
+		@yield('content')		
 	@include('share/footer')
 
 	<script src="js/vendor/jquery-2.2.4.min.js"></script>

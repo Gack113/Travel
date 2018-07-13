@@ -63,118 +63,24 @@
             </div>
 <div class="mid_right">
     <div class="midright_content">
-        <div class="item-procol">
-                    <div class="Frames">
-                        <a href="/tour/du-lich-co-to-3-ngay-2-dem-160.html" title="DU LỊCH CÔ TÔ 3 NGÀY 2 ĐÊM">
-                            <img src="http://www.dimatourmuine.com/UpLoads/files/c%C3%B4%20t%C3%B4%204.jpg" alt="DU LỊCH CÔ TÔ 3 NGÀY 2 ĐÊM">
+        @foreach($recently_tour as $rcl)
+            <div class="item-procol">
+                        <div class="Frames">
+                            <a href="/tour/du-lich-co-to-3-ngay-2-dem-160.html" title="DU LỊCH CÔ TÔ 3 NGÀY 2 ĐÊM">
+                                <img src="{{$rcl->thumbnail}}" alt="DU LỊCH CÔ TÔ 3 NGÀY 2 ĐÊM">
+                            </a>
+                        </div>
+                        <a href="/tour/du-lich-co-to-3-ngay-2-dem-160.html">
+                                {{$rcl->name}}
                         </a>
-                    </div>
-                    <a href="/tour/du-lich-co-to-3-ngay-2-dem-160.html">
-                        DU LỊCH CÔ TÔ 3 NGÀY 2 ĐÊM
-                    </a>
-                    <p>
-                        <span class="spct">2,890,000 &nbsp;Đ </span>
-                    </p>
-                    <span class="pro_time">
-                        3 ngày 2 đêm
-                    </span>
-        </div>
-        <div class="item-procol">
-                <div class="Frames">
-                    <a href="/tour/ha-noi--nha-trang-3-ngay--2-dem-159.html" title="Hà Nội - Nha Trang (3 ngày - 2 đêm)">
-                        <img src="http://www.dimatourmuine.com/UpLoads/files/c%C3%B4%20t%C3%B4%204.jpg" alt="Hà Nội - Nha Trang (3 ngày - 2 đêm)">
-                    </a>
-                </div>
-                <a href="/tour/ha-noi--nha-trang-3-ngay--2-dem-159.html">
-                    Hà Nội - Nha Trang (3 ngày - 2 đêm)
-                </a>
-                <p>
-                    <span class="spct">3,670,000 &nbsp;Đ </span>
-                </p>
-                <span class="pro_time">
-                    3 ngày 2 đêm
-                </span>
+                        <p>
+                            <span class="spct">{{$rcl->fare}} vnd </span>
+                        </p>
+                        <span class="pro_time">
+                                {{$rcl->duration}} 
+                        </span>
             </div>
-            <div class="item-procol">
-                <div class="Frames">
-                    <a href="/tour/ha-noi--nha-trang-3-ngay--2-dem-159.html" title="Hà Nội - Nha Trang (3 ngày - 2 đêm)">
-                        <img src="http://www.dimatourmuine.com/UpLoads/files/c%C3%B4%20t%C3%B4%204.jpg" alt="Hà Nội - Nha Trang (3 ngày - 2 đêm)">
-                    </a>
-                </div>
-                <a href="/tour/ha-noi--nha-trang-3-ngay--2-dem-159.html">
-                    Hà Nội - Nha Trang (3 ngày - 2 đêm)
-                </a>
-                <p>
-                    <span class="spct">3,670,000 &nbsp;Đ </span>
-                </p>
-                <span class="pro_time">
-                    3 ngày 2 đêm
-                </span>
-            </div>
-            <div class="item-procol">
-                <div class="Frames">
-                    <a href="/tour/ha-noi--nha-trang-3-ngay--2-dem-159.html" title="Hà Nội - Nha Trang (3 ngày - 2 đêm)">
-                        <img src="http://www.dimatourmuine.com/UpLoads/files/c%C3%B4%20t%C3%B4%204.jpg" alt="Hà Nội - Nha Trang (3 ngày - 2 đêm)">
-                    </a>
-                </div>
-                <a href="/tour/ha-noi--nha-trang-3-ngay--2-dem-159.html">
-                    Hà Nội - Nha Trang (3 ngày - 2 đêm)
-                </a>
-                <p>
-                    <span class="spct">3,670,000 &nbsp;Đ </span>
-                </p>
-                <span class="pro_time">
-                    3 ngày 2 đêm
-                </span>
-            </div>
-            <div class="item-procol">
-                <div class="Frames">
-                    <a href="/tour/ha-noi--nha-trang-3-ngay--2-dem-159.html" title="Hà Nội - Nha Trang (3 ngày - 2 đêm)">
-                        <img src="http://www.dimatourmuine.com/UpLoads/files/c%C3%B4%20t%C3%B4%204.jpg" alt="Hà Nội - Nha Trang (3 ngày - 2 đêm)">
-                    </a>
-                </div>
-                <a href="/tour/ha-noi--nha-trang-3-ngay--2-dem-159.html">
-                    Hà Nội - Nha Trang (3 ngày - 2 đêm)
-                </a>
-                <p>
-                    <span class="spct">3,670,000 &nbsp;Đ </span>
-                </p>
-                <span class="pro_time">
-                    3 ngày 2 đêm
-                </span>
-            </div>
-            <div class="item-procol">
-                <div class="Frames">
-                    <a href="/tour/ha-noi--nha-trang-3-ngay--2-dem-159.html" title="Hà Nội - Nha Trang (3 ngày - 2 đêm)">
-                        <img src="http://www.dimatourmuine.com/UpLoads/files/c%C3%B4%20t%C3%B4%204.jpg" alt="Hà Nội - Nha Trang (3 ngày - 2 đêm)">
-                    </a>
-                </div>
-                <a href="/tour/ha-noi--nha-trang-3-ngay--2-dem-159.html">
-                    Hà Nội - Nha Trang (3 ngày - 2 đêm)
-                </a>
-                <p>
-                    <span class="spct">3,670,000 &nbsp;Đ </span>
-                </p>
-                <span class="pro_time">
-                    3 ngày 2 đêm
-                </span>
-            </div>
-            <div class="item-procol">
-                <div class="Frames">
-                    <a href="/tour/ha-noi--nha-trang-3-ngay--2-dem-159.html" title="Hà Nội - Nha Trang (3 ngày - 2 đêm)">
-                        <img src="http://www.dimatourmuine.com/UpLoads/files/c%C3%B4%20t%C3%B4%204.jpg" alt="Hà Nội - Nha Trang (3 ngày - 2 đêm)">
-                    </a>
-                </div>
-                <a href="/tour/ha-noi--nha-trang-3-ngay--2-dem-159.html">
-                    Hà Nội - Nha Trang (3 ngày - 2 đêm)
-                </a>
-                <p>
-                    <span class="spct">3,670,000 &nbsp;Đ </span>
-                </p>
-                <span class="pro_time">
-                    3 ngày 2 đêm
-                </span>
-            </div>
+        @endforeach                      
     </div>
 </div>
 </section>

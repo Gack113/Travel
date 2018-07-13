@@ -18,162 +18,25 @@
             color: #fff;
         }
 </style>
-<!-- Start popular-destination Area -->
-<section class="popular-destination-area section-gap" style="padding-bottom:20px">
-    <div class="container">
-        <div>
-            <div class="td-block-title-wrap">
-                <h4 class="block-title" style="background-color: white;"><span style="margin-right: 0px;">Tour nổi bật</span></h4>
-            </div>
-        </div>
-        <div class="row">
 
-            <div class="col-lg-4">
-                <div class="single-destination relative">
-                    <div class="thumb relative">
-                        <div class="overlay overlay-bg"></div>
-                        <img class="img-fluid" src="img/d1.jpg" alt="">
-                    </div>
-                    <div class="desc">
-                        <a href="#" class="price-btn">$150</a>
-                        <h4>Mountain River</h4>
-                        <p>Paraguay</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="single-destination relative">
-                    <div class="thumb relative">
-                        <div class="overlay overlay-bg"></div>
-                        <img class="img-fluid" src="img/d2.jpg" alt="">
-                    </div>
-                    <div class="desc">
-                        <a href="#" class="price-btn">$250</a>
-                        <h4>Dream City</h4>
-                        <p>Paris</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="single-destination relative">
-                    <div class="thumb relative">
-                        <div class="overlay overlay-bg"></div>
-                        <img class="img-fluid" src="img/d3.jpg" alt="">
-                    </div>
-                    <div class="desc">
-                        <a href="#" class="price-btn">$350</a>
-                        <h4>Cloud Mountain</h4>
-                        <p>Sri Lanka</p>
-                    </div>
-                </div>
-			</div>
-			<div class="col-lg-4">
-                <div class="single-destination relative">
-                    <div class="thumb relative">
-                        <div class="overlay overlay-bg"></div>
-                        <img class="img-fluid" src="img/d1.jpg" alt="">
-                    </div>
-                    <div class="desc">
-                        <a href="#" class="price-btn">$150</a>
-                        <h4>Mountain River</h4>
-                        <p>Paraguay</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="single-destination relative">
-                    <div class="thumb relative">
-                        <div class="overlay overlay-bg"></div>
-                        <img class="img-fluid" src="img/d2.jpg" alt="">
-                    </div>
-                    <div class="desc">
-                        <a href="#" class="price-btn">$250</a>
-                        <h4>Dream City</h4>
-                        <p>Paris</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="single-destination relative">
-                    <div class="thumb relative">
-                        <div class="overlay overlay-bg"></div>
-                        <img class="img-fluid" src="img/d3.jpg" alt="">
-                    </div>
-                    <div class="desc">
-                        <a href="#" class="price-btn">$350</a>
-                        <h4>Cloud Mountain</h4>
-                        <p>Sri Lanka</p>
-                    </div>
-                </div>
-            </div>
+<!-- tour noi bat -->
+@include('page/outStandingTour')
+<!-- end tour noi bat -->
+
+
+<!-- tour moi va tour giam gia -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 posts-list">
+            @include('page/recentlyTour')
+        </div>
+        <div class="col-lg-4 sidebar-widgets">
+            @include('page/discountTour')
         </div>
     </div>
-</section>
-<!-- End popular-destination Area -->
-<!-- Start other-issue Area -->
-<section class="other-issue-area section-gap" style="padding-top:20px">
-    <div class="container">
-		<div>
-            <div class="td-block-title-wrap">
-                <h4 class="block-title" style="background-color: white;"><span style="margin-right: 0px;">Tour trong nước</span></h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="single-other-issue">
-                    <div class="thumb">
-                        <img class="img-fluid" src="img/o1.jpg" alt="">
-                    </div>
-                    <a href="#">
-                        <h4>Rent a Car</h4>
-                    </a>
-                    <p>
-                        The preservation of human life is the ultimate value, a pillar of ethics and the foundation.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="single-other-issue">
-                    <div class="thumb">
-                        <img class="img-fluid" src="img/o2.jpg" alt="">
-                    </div>
-                    <a href="#">
-                        <h4>Cruise Booking</h4>
-                    </a>
-                    <p>
-                        I was always somebody who felt quite sorry for myself, what I had not got compared.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="single-other-issue">
-                    <div class="thumb">
-                        <img class="img-fluid" src="img/o3.jpg" alt="">
-                    </div>
-                    <a href="#">
-                        <h4>To Do List</h4>
-                    </a>
-                    <p>
-                        The following article covers a topic that has recently moved to center stage–at least it seems.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="single-other-issue">
-                    <div class="thumb">
-                        <img class="img-fluid" src="img/o4.jpg" alt="">
-                    </div>
-                    <a href="#">
-                        <h4>Food Features</h4>
-                    </a>
-                    <p>
-                        There are many kinds of narratives and organizing principles. Science is driven by evidence.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+</div>
+<!-- end tour moi va tour giam gia -->
+
 <!-- End other-issue Area -->
 <!-- Start testimonial Area -->
 <section class="testimonial-area section-gap">

@@ -7,9 +7,24 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function index(){
-        $outstandingTour = Tour::take(10)->get();
-        return View('page.index')->with('outstandingTour',$outstandingTour);
+    public function index() {
+        $outstandingTour = Tour::orderBy('booked', 'DESC')
+                                ->take(12)
+                                ->get();
+
+        $recentlyTour = Tour::orderBy('created_at', 'DESC')
+                            ->take(10)
+                            ->get();
+        
+        $discountTours = Tour::orderBy('created_at', 'DESC')
+                            ->take(10)
+                            ->get();
+
+        return view("page/index", [
+                    "outstanding_tour" => $outstandingTour,
+                    "recently_tour" => $recentlyTour,
+                    "discount_tour" => $discountTours
+                    ]);
     }
     
     public function show(){
