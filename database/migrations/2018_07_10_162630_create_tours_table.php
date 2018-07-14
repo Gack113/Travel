@@ -23,6 +23,7 @@ class CreateToursTable extends Migration
             $table->float('fare');
             $table->string('schedule');
             $table->integer('booked')->default(0);
+            $table->integer('discount')->default(0);
             $table->text('description');
             $table->boolean('is_active');
 
