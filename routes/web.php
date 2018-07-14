@@ -11,5 +11,5 @@
 |
 */
 
-Route::get('/', 'PageController@index')->name('Home');
+Route::get('/{locale}', 'PageController@index')->name('Home');
 Route::get('/{slug}', 'PageController@show')->name('show');

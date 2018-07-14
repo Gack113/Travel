@@ -1,23 +1,5 @@
 <header id="header">
 	<div class="header-top">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-6 col-sm-6 col-6 header-top-left">
-					<ul>
-						<li><a href="#">Visit Us</a></li>
-						<li><a href="#">Buy Tickets</a></li>
-					</ul>			
-				</div>
-				<div class="col-lg-6 col-sm-6 col-6 header-top-right">
-				<div class="header-social">
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-					<a href="#"><i class="fa fa-dribbble"></i></a>
-					<a href="#"><i class="fa fa-behance"></i></a>
-				</div>
-				</div>
-			</div>			  					
-		</div>
 	</div>
 	<div class="container main-menu">
 		<div class="row align-items-center justify-content-between d-flex">
@@ -57,20 +39,20 @@
 </header><!-- #header -->
 <!-- start banner Area -->
 <section class="banner-area relative">
-				<div class="overlay overlay-bg"></div>				
-				<div class="container">
-					<div class="row fullscreen align-items-center justify-content-between">
-						<div class="col-lg-6 col-md-6 banner-left">
-							<h6 class="text-white">Away from monotonous life</h6>
-							<h1 class="text-white">Magical Travel</h1>
-							<p class="text-white">
-								If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $.17 each.
-							</p>
-							<a href="#" class="primary-btn text-uppercase">Get Started</a>
-						</div>
-					</div>
-				</div>					
-			</section>
-			<!-- End banner Area -->
+	<div class="overlay overlay-bg"></div>				
+	<div class="container">
+		<div class="row fullscreen align-items-center justify-content-between">
+			<div class="col-lg-6 col-md-6 banner-left">
+				<h6 class="text-white">Away from monotonous life</h6>
+				<h1 class="text-white">Magical Travel</h1>
+				<p class="text-white">
+					If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $.17 each.
+				</p>
+				<a href="#" class="primary-btn text-uppercase">Get Started</a>
+			</div>
+		</div>
+	</div>					
+</section>
+<!-- End banner Area -->
 
 			
