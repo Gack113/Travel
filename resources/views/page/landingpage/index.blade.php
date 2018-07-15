@@ -18,7 +18,6 @@
         color: #fff;
     }
 </style>
-
 <!-- tour noi bat -->
 @include('page/landingpage/outStandingTour')
 <!-- end tour noi bat -->
