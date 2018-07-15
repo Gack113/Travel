@@ -23,7 +23,7 @@ class PageController extends Controller
                             ->take(5)
                             ->get();
 
-        return view("page/index", [
+        return view("page/landingpage/index", [
                     "outstanding_tour" => $outstandingTour,
                     "recently_tour" => $recentlyTour,
                     "discount_tour" => $discountTours

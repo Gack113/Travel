@@ -65,20 +65,20 @@
     <div class="midright_content">
         @foreach($recently_tour as $rcl)
             <div class="item-procol">
-                        <div class="Frames">
-                            <a href="/tour/du-lich-co-to-3-ngay-2-dem-160.html" title="DU LỊCH CÔ TÔ 3 NGÀY 2 ĐÊM">
-                                <img src="{{$rcl->thumbnail}}" alt="DU LỊCH CÔ TÔ 3 NGÀY 2 ĐÊM">
-                            </a>
-                        </div>
-                        <a href="/tour/du-lich-co-to-3-ngay-2-dem-160.html">
-                                {{$rcl->name}}
-                        </a>
-                        <p>
-                            <span class="spct">{{$rcl->fare}} vnd </span>
-                        </p>
-                        <span class="pro_time">
-                                {{$rcl->duration}} 
-                        </span>
+                <div class="Frames">
+                    <a href="/tour/du-lich-co-to-3-ngay-2-dem-160.html" title="DU LỊCH CÔ TÔ 3 NGÀY 2 ĐÊM">
+                        <img src="{{$rcl->thumbnail}}" alt="DU LỊCH CÔ TÔ 3 NGÀY 2 ĐÊM">
+                    </a>
+                </div>
+                <a href="/tour/du-lich-co-to-3-ngay-2-dem-160.html">
+                        {{$rcl->name}}
+                </a>
+                <p>
+                    <span class="spct">{{$rcl->fare}} vnd </span>
+                </p>
+                <span class="pro_time">
+                        {{$rcl->duration}} 
+                </span>
             </div>
         @endforeach                      
     </div>
