@@ -1,5 +1,29 @@
 <header id="header">
 	<div class="header-top">
+		
+		<!-- Config lang -->
+		<div class="container">
+			<div class="row align-items-center">
+			
+				<!-- TEMP -->
+				<div class="col-lg-6 col-sm-6 col-6 header-top-left">
+				</div>
+				<!-- END_TEMP -->
+
+				<!-- LANG -->
+				<div class="col-lg-6 col-sm-6 col-6 header-top-right">
+					<div class="header-social">
+						<span style="font-size: 15px;">Language</span>
+							<a href="#">VN</a>
+							<a href="#">EN</a>
+						</div>
+					</div>
+				</div>
+				<!-- END LANG	-->
+			</div>
+		</div>
+		<!-- Config lang -->
+
 	</div>
 	<div class="container main-menu">
 		<div class="row align-items-center justify-content-between d-flex">

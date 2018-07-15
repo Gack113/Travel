@@ -4,7 +4,7 @@
             <div class="menu-content pb-60 col-lg-9">
                 <div class="title text-center">
                     <h1 class="mb-10">Tour nổi bật</h1>
-                    <p>Những tour được quan tâm nhất,và thịnh hành nhất hiện nay</p>
+                    <p>{{ __('index.wellcome') }}</p>
                 </div>
             </div>
         </div>
