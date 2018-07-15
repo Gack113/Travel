@@ -13,8 +13,20 @@ class TourController extends BaseController
         return view('admin.tour.index', compact('tours'));
     }
 
-    public function show(Request $req){
-        $tour = Tour::where('id',$req->id)->first();
+    public function show($id){
+        $tour = Tour::find($id);
         return $tour;
+    }
+
+    public function store(Request $req){
+        return 'create';
+    }
+
+    public function update(Request $req, Tour $tour){
+        return 'update';
+    }
+
+    public function destroy(Tour $tour){
+        return 'delete';
     }
 }

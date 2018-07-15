@@ -29,6 +29,9 @@
                             <th>
                                 Fare
                             </th>
+                            <th>
+                                Actions
+                            </th>
                         </thead>
                         <tbody>
                             @foreach($tours as $item)
@@ -50,6 +53,9 @@
                                     </td>
                                     <td class="text-primary">
                                         ${{$item->fare}}
+                                    </td>
+                                    <td>
+                                        
                                     </td>
                                 </tr>
                             @endforeach

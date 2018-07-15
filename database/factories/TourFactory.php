@@ -1,7 +1,6 @@
 <?php
 
 use Faker\Generator as Faker;
-
 $factory->define(App\Tour::class, function (Faker $faker) {
     $name = 'Tour '. $faker->country .' to '. $faker->country;
     return [
@@ -15,7 +14,7 @@ $factory->define(App\Tour::class, function (Faker $faker) {
         'booked' => random_int(5,140),
         'discount' => random_int(5,50),
         'description' => $faker->text,
-        'slug' => str_slug($name),
+        'slug' => str_slug($name).$faker->unixTime($min = 'now'),
         'is_active' => $faker->boolean
     ];
 });

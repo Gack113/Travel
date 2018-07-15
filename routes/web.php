@@ -19,11 +19,8 @@ Route::group(['prefix' => 'auth'], function () {
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('/dashboard', 'DashBoardController@index')->name('dashboard');
 
-
-    //TOUR//
-    Route::get('/tours', 'TourController@index')->name('tours');
-    Route::get('/tours/{id}', 'TourController@show')->name('tour-show');
-    //END TOUR//
+    Route::resource('tours', 'TourController');
+    Route::resource('bookings', 'BookingController');
 
 });
 
