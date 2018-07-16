@@ -1,5 +1,5 @@
 <?php
 
 return [
-  'wellcome' => 'Wellcome to Mui Ne'
+  'wellcome' => 'Wellcome to Mui Ne',
 ];
