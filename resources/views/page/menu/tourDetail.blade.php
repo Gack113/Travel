@@ -1,6 +1,8 @@
-@extends('layout')
+{{-- @extends('layout')
 @section('content')
-<div class="container">
+@if($tour==[]){}
+    @else{
+        <div class="container">
     <div class="row">
         <div class="col-lg-8 posts-list">
             <div>
@@ -83,4 +85,7 @@
         </div>
     </div>
 </div>
-@endsection
+    }
+
+@endsection --}}
+<div>lll</div>
