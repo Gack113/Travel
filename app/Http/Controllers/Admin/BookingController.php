@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Booking;
 use Illuminate\Http\Request;
 
-class BookingController extends Controller
+class BookingController extends BaseController
 {
     /**
      * Display a listing of the resource.
