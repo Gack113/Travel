@@ -4,7 +4,7 @@
     'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
-    'url' => 'travel.ssv',
+    'url' => 'localhost',
     'timezone' => 'UTC',
     'locale' => 'en',
     'fallback_lang' => 'en',
@@ -173,7 +173,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\framework/cache/data',
+        'path' => 'E:\\Travel\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -278,13 +278,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\app',
+        'root' => 'E:\\Travel\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\app/public',
-        'url' => 'travel.ssv/storage',
+        'root' => 'E:\\Travel\\storage\\app/public',
+        'url' => 'localhost/storage',
         'visibility' => 'public',
       ),
       's3' => 
@@ -328,13 +328,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\logs/laravel.log',
+        'path' => 'E:\\Travel\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\logs/laravel.log',
+        'path' => 'E:\\Travel\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 7,
       ),
@@ -386,7 +386,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\Users\\Bao\\Desktop\\travel\\resources\\views/vendor/mail',
+        0 => 'E:\\Travel\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -467,7 +467,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\framework/sessions',
+    'files' => 'E:\\Travel\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -487,9 +487,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\Users\\Bao\\Desktop\\travel\\resources\\views',
+      0 => 'E:\\Travel\\resources\\views',
     ),
-    'compiled' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\framework\\views',
+    'compiled' => 'E:\\Travel\\storage\\framework\\views',
   ),
   'trustedproxy' => 
   array (

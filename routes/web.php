@@ -27,6 +27,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 Route::group(['middleware' => 'language', 'prefix' => 'en'], function() {
     Route::get('/', 'PageController@index')->name('HomeEn');
     Route::get('/{slug}', 'PageController@show')->name('show');
+    Route::get('/test/1', 'PageController@test')->name('test');
 });
 
 Route::group(['middleware' => 'language', 'prefix' => 'vn'], function() {

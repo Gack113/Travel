@@ -38,4 +38,8 @@ class PageController extends Controller
     public function show() {
         return 1;
     }
+
+    public function test() {
+        return view('page.menu.tourDetail');
+    }
 }
