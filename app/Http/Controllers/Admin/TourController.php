@@ -91,8 +91,7 @@ class TourController extends BaseController
             });
             return redirect()->route('tours.create')->with('success', 'Tour thêm thành công');
         } catch (\Exception $e) {
-            dd($e);
-            // return redirect()->route('tours.create')->with('error', 'Tour thêm không thành công! Vui lòng thử lại sau.');
+            return redirect()->route('tours.create')->with('error', 'Tour thêm không thành công! Vui lòng thử lại sau.');
         }
 
     }
