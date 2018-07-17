@@ -4,7 +4,7 @@
     'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
-    'url' => 'localhost',
+    'url' => 'travel.ssv',
     'timezone' => 'UTC',
     'locale' => 'en',
     'fallback_lang' => 'en',
@@ -39,10 +39,11 @@
       19 => 'Illuminate\\Translation\\TranslationServiceProvider',
       20 => 'Illuminate\\Validation\\ValidationServiceProvider',
       21 => 'Illuminate\\View\\ViewServiceProvider',
-      22 => 'App\\Providers\\AppServiceProvider',
-      23 => 'App\\Providers\\AuthServiceProvider',
-      24 => 'App\\Providers\\EventServiceProvider',
-      25 => 'App\\Providers\\RouteServiceProvider',
+      22 => 'Unisharp\\Ckeditor\\ServiceProvider',
+      23 => 'App\\Providers\\AppServiceProvider',
+      24 => 'App\\Providers\\AuthServiceProvider',
+      25 => 'App\\Providers\\EventServiceProvider',
+      26 => 'App\\Providers\\RouteServiceProvider',
     ),
     'aliases' => 
     array (
@@ -173,7 +174,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'E:\\Travel\\storage\\framework/cache/data',
+        'path' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -278,13 +279,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'E:\\Travel\\storage\\app',
+        'root' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'E:\\Travel\\storage\\app/public',
-        'url' => 'localhost/storage',
+        'root' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\app/public',
+        'url' => 'travel.ssv/storage',
         'visibility' => 'public',
       ),
       's3' => 
@@ -328,13 +329,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'E:\\Travel\\storage\\logs/laravel.log',
+        'path' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'E:\\Travel\\storage\\logs/laravel.log',
+        'path' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 7,
       ),
@@ -386,7 +387,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'E:\\Travel\\resources\\views/vendor/mail',
+        0 => 'C:\\Users\\Bao\\Desktop\\travel\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -467,7 +468,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'E:\\Travel\\storage\\framework/sessions',
+    'files' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -487,9 +488,9 @@
   array (
     'paths' => 
     array (
-      0 => 'E:\\Travel\\resources\\views',
+      0 => 'C:\\Users\\Bao\\Desktop\\travel\\resources\\views',
     ),
-    'compiled' => 'E:\\Travel\\storage\\framework\\views',
+    'compiled' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\framework\\views',
   ),
   'trustedproxy' => 
   array (

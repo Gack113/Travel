@@ -2,7 +2,13 @@
 @section('content')
 
 <style>
-    .form-group i:hover{
+
+    .form-group #selectPic{
+        position: absolute;
+        bottom: 6px;
+    }
+
+    .form-group #selectPic:hover{
         cursor: pointer;
     }
 </style>
@@ -67,8 +73,9 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <img src="https://lorempixel.com/640/480/?42087" width="50" id="prePic">
+                                <img src="img/default.png" width="100" id="prePic">
                                 <i class="material-icons" id="selectPic">photo_camera</i>
+                                <label class="">Chọn hình ảnh</label>
                                 <input type="file" class="form-control" accept="image/*" id="thumbnail" name="thumbnail" hidden>
                             </div>
                         </div>
@@ -83,6 +90,17 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Nội dung chi tiết</label>
+                                    <br><br>
+                                    <textarea class="form-control editor" rows="3" name="content"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <button type="submit" class="btn btn-primary pull-right">Save</button>
                     <div class="clearfix"></div>
                 </form>
@@ -91,16 +109,34 @@
     </div>
 </div>
 
+
+@endSection
+
+@section('js')
+<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+<script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
+
 <script>
     $('#selectPic').on('click', () => {
         $('#thumbnail').trigger('click')
     })
 
     $('#thumbnail').on('change', e => {
-        var file = e.target.files[0]
-        var fr = new FileReader()
-        fr.readAsDataURL(file)
+        if (e.target.files && e.target.files[0]) {
+            var fr = new FileReader()
+            fr.onload = function (e) {
+                $('#prePic').prop('src', e.target.result)
+            }
+            fr.readAsDataURL(e.target.files[0])
+        }
     })
-</script>
 
-@endSection
+    $('.editor').on('click', () => $('.editor').ckeditor({
+        language:'en-gb',
+        filebrowserBrowseUrl : '{{url("vendor/unisharp/laravel-ckeditor")}}/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
+        filebrowserUploadUrl : '{{url("vendor/unisharp/laravel-ckeditor")}}/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
+        filebrowserImageBrowseUrl : '{{url("vendor/unisharp/laravel-ckeditor")}}/filemanager/dialog.php?type=1&editor=ckeditor&fldr='
+    }))
+
+</script>
+@endsection
