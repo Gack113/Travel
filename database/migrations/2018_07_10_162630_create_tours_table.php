@@ -24,7 +24,7 @@ class CreateToursTable extends Migration
             $table->string('schedule');
             $table->integer('booked')->default(0);
             $table->integer('discount')->default(0);
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('slug')->unique();
             $table->boolean('is_active');
 

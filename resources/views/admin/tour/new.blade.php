@@ -14,14 +14,15 @@
 </style>
 
 <div class="row">
-    <div class="col-md-10">
+    <div class="col-md-9">
         <div class="card">
             <div class="card-header card-header-primary">
                 <h4 class="card-title">{{$cname}}</h4>
                 <p class="card-category">{{$fname}}</p>
             </div>
             <div class="card-body">
-                <form method="POST" action="{{route('tours.store')}}">
+                <form method="POST" action="{{route('tours.store')}}" enctype="multipart/form-data">
+                    @csrf
                     <div class="row">
                         <div class="col-md-8">
                             <div class="form-group">
@@ -96,7 +97,7 @@
                                 <div class="form-group">
                                     <label class="bmd-label-floating">Nội dung chi tiết</label>
                                     <br><br>
-                                    <textarea class="form-control editor" rows="3" name="content"></textarea>
+                                    <textarea class="form-control editor" rows="5" name="content"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -104,6 +105,50 @@
                     <button type="submit" class="btn btn-primary pull-right">Save</button>
                     <div class="clearfix"></div>
                 </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">Notification</h4>
+            </div>
+            <div class="card-body">
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    <div class="alert alert-warning">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <i class="material-icons">close</i>
+                        </button>
+                        <span>
+                            {{ $error }}
+                        </span> 
+                    </div>
+                @endforeach
+            @endif
+
+            @if (session('success'))
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <i class="material-icons">close</i>
+                    </button>
+                    <span>
+                        {{session('success')}}
+                    </span> 
+                </div>
+            @endif
+
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <i class="material-icons">close</i>
+                    </button>
+                    <span>
+                        {{session('error')}}
+                    </span> 
+                </div>
+            @endif
+
             </div>
         </div>
     </div>
