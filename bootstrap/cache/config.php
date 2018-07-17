@@ -6,11 +6,11 @@
     'debug' => true,
     'url' => 'localhost',
     'timezone' => 'UTC',
-    'locale' => 'en',
-    'fallback_lang' => 'en',
+    'locale' => 'vn',
     'alt_langs' => 
     array (
-      0 => 'vn',
+      0 => 'en',
+      1 => 'de',
     ),
     'fallback_locale' => 'en',
     'key' => 'base64:pBXqqXv+3b/CgCJcrmfN4NwHfsYmFS4suxNxNsTy0Ps=',

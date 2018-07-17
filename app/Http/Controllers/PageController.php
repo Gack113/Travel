@@ -4,15 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Tour;
 use App\TourDetail;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function redirect() {
-        return \Redirect::route('HomeEn');
-    }
-
+    /**
+     * 
+     */
     public function index() {
         $outstandingTour = Tour::where('is_active', 1)
                                 ->orderBy('booked', 'DESC')
@@ -36,6 +34,9 @@ class PageController extends Controller
                     ]);     
     }
     
+    /**
+     * 
+     */
     public function show($slug) {
         $tour = Tour::where('slug', $slug)->first();
         
@@ -47,10 +48,18 @@ class PageController extends Controller
             return view('page/menu/tourDetail', ['tour' => $tour, 'discount_tour' => $discountTours]);
         } 
         
-        return \Redirect::route('HomeEn');
+        return redirect()->route('home');
     }
 
-    public function test() {
-        return view('page.menu.tourDetail');
+    public function listTours() {
+        
+    }
+
+    /**
+     * 
+     */
+    public function changeLocale(Request $request, $locale) {
+        $request->session()->put('locale', $locale);
+        return redirect()->back();
     }
 }

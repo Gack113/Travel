@@ -3,8 +3,7 @@
         <div class="row d-flex justify-content-center">
             <div class="menu-content pb-60 col-lg-9">
                 <div class="title text-center">
-                    <h1 class="mb-10">Tour nổi bật</h1>
-                    <p>{{ __('index.wellcome') }}</p>
+                    <h1 class="mb-10">{{ __('index.recentlyTour') }}</h1>
                 </div>
             </div>
         </div>
