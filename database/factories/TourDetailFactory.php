@@ -7,3 +7,4 @@ $factory->define(App\TourDetail::class, function (Faker $faker) {
         'content' => $faker->realText($maxNbChars = 5000, $indexSize = 2)
     ];
 });
+;
