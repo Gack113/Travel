@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Config;
+use Illuminate\Support\Facades\Session;
 
 class Language
 {
@@ -16,11 +17,15 @@ class Language
      */
     public function handle($request, Closure $next)
     {
-        $lang = $request->segment(1);
-        if (in_array($lang, Config::get('app.alt_langs'))) {            
-            config(['app.locale' => $lang]);
+        if ($request->session()->has('locale')) {
+            $locale = $request->session()->get('locale');
+            if (in_array($locale, Config::get('app.alt_langs'))) {            
+                config(['app.locale' => $locale]);
+            }
         } else {
-            config(['app.locale' => 'en']);
+            $defaultLocale = Config::get('app.locale');
+            $request->session()->put('locale', $defaultLocale);
+            config(['app.locale' => $defaultLocale]);
         }
         
         return $next($request);

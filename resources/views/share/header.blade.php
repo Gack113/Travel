@@ -14,8 +14,8 @@
 				<div class="col-lg-6 col-sm-6 col-6 header-top-right">
 					<div class="header-social">
 						<span style="font-size: 15px;">Language</span>
-							<a href="#">VN</a>
-							<a href="#">EN</a>
+							<a href="{!! route('change-locale', ['vn']) !!}">VN</a>
+							<a href="{!! route('change-locale', ['en']) !!}">EN</a>
 						</div>
 					</div>
 				</div>

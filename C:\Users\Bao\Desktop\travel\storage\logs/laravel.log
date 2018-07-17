@@ -1,0 +1,12 @@
+[2018-07-17 14:53:13] local.ERROR: Class 'Unisharp\Ckeditor\ServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'Unisharp\\Ckeditor\\ServiceProvider' not found at /home/nakhoa/workspace/Travel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:637)
+[stacktrace]
+#0 /home/nakhoa/workspace/Travel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(569): Illuminate\\Foundation\\Application->resolveProvider('Unisharp\\\\Ckedit...')
+#1 /home/nakhoa/workspace/Travel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('Unisharp\\\\Ckedit...')
+#2 /home/nakhoa/workspace/Travel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(548): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 /home/nakhoa/workspace/Travel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 /home/nakhoa/workspace/Travel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(206): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 /home/nakhoa/workspace/Travel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(297): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 /home/nakhoa/workspace/Travel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(120): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 /home/nakhoa/workspace/Travel/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 

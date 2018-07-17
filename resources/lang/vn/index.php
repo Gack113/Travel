@@ -1,5 +1,5 @@
 <?php
 
 return [
-  'wellcome' => 'Chao mung toi mui ne'
+  'wellcome' => 'Chào mừng tới mũi né nè'
 ];
