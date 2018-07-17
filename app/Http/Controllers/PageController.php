@@ -48,7 +48,7 @@ class PageController extends Controller
             return view('page/menu/tourDetail', ['tour' => $tour, 'discount_tour' => $discountTours]);
         } 
         
-        return \Redirect::route('home');
+        return redirect()->route('home');
     }
 
     /**
