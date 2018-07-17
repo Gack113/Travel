@@ -3,7 +3,8 @@
         <div class="col-lg-8 posts-list">
             <div>
                 <div class="td-block-title-wrap">
-                    <h4 class="block-title" style="background-color: white;"><span style="margin-right: 0px;">Tour nổi bật</span></h4>
+                    <h4 class="block-title" style="background-color: white;">
+                    <span style="margin-right: 0px;">{{ __('index.highlightTour') }}</span></h4>
                 </div>
             </div>
             <div class="row">
@@ -26,7 +27,9 @@
         <div class="col-lg-4 sidebar-widgets">
             <div>
                 <div class="td-block-title-wrap">
-                    <h4 class="block-title" style="background-color: white;"><span style="margin-right: 0px;">Tour giảm giá</span></h4>
+                    <h4 class="block-title" style="background-color: white;">
+                        <span style="margin-right: 0px;">{{ __('index.discountTour') }}</span>
+                    </h4>
                 </div>
             </div>
             <div class="widget-wrap">
