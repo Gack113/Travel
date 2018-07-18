@@ -52,7 +52,8 @@ class PageController extends Controller
     }
 
     public function listTours() {
-        
+        $tours = Tour::where('is_active', 1)->orderBy('created_at', 'DESC')->paginate(6);
+        return view('page/menu/listTour',compact('tours'));
     }
 
     /**

@@ -27,4 +27,5 @@ Route::get('change-language/{locale}', 'PageController@changeLocale')->name('cha
 Route::group(['middleware' => 'language'], function() {
     Route::get('/', 'PageController@index')->name('home');
     Route::get('/{slug}', 'PageController@show')->name('show');
+    Route::get('/tour/danh-sach', 'PageController@listTours')->name('tour-list');
 });
