@@ -15,7 +15,7 @@ Route::group(['prefix' => 'auth'], function () {
     Auth::routes();
 });
 
-Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/dashboard', 'DashBoardController@index')->name('dashboard');
 
     Route::resource('tours', 'TourController');

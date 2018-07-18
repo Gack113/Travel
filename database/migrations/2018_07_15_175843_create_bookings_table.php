@@ -17,9 +17,10 @@ class CreateBookingsTable extends Migration
             $table->increments('id', true)->index();
             $table->integer('tour_id')->unsigned()->index();
             $table->integer('customer_id')->unsigned()->index();
-            $table->string('note');
-            $table->datetime('depart_at');
-            $table->integer('amount');
+            $table->string('note')->nullable();
+            $table->datetime('depart_at')->nullable();
+            $table->integer('amount')->nullable();
+            $table->integer('state')->nullable();
 
             $table->timestamps();
         });

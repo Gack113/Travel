@@ -26,6 +26,7 @@
                             <th>
                                 Detail
                             </th>
+                            <th>Actions</th>
                         </thead>
                         <tbody>
                             @foreach($customers as $item)
@@ -44,6 +45,14 @@
                                     </td>
                                     <td>
                                         <a href=""><button class="btn btn-primary btn-xs">Show</button></a>
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
+                                            <i class="material-icons">edit</i>
+                                        <div class="ripple-container"></div></button>
+                                        <button type="button" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
+                                            <i class="material-icons">close</i>
+                                        <div class="ripple-container"></div></button>
                                     </td>
                                 </tr>
                             @endforeach

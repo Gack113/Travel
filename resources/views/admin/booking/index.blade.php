@@ -26,6 +26,13 @@
                             <th>
                                 Note
                             </th>
+                            <th>
+                                Start day
+                            </th>
+                            <th>
+                                State
+                            </th>
+                            <th>Actions</th>
                         </thead>
                         <tbody>
                             @foreach($bookings as $item)
@@ -43,7 +50,21 @@
                                         {{$item->amount}}
                                     </td>
                                     <td>
-                                        {{$item->note}}
+                                        {{str_limit($item->note, 50, '...')}}
+                                    </td>
+                                    <td>
+                                        {{$item->depart_at}}
+                                    </td>
+                                    <td>
+                                        {{$item->state}}
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
+                                            <i class="material-icons">edit</i>
+                                        <div class="ripple-container"></div></button>
+                                        <button type="button" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
+                                            <i class="material-icons">close</i>
+                                        <div class="ripple-container"></div></button>
                                     </td>
                                 </tr>
                             @endforeach
