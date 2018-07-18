@@ -20,6 +20,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 
     Route::resource('tours', 'TourController');
     Route::resource('bookings', 'BookingController');
+    Route::resource('customers', 'CustomerController');
 
 });
 

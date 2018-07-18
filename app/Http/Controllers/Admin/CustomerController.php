@@ -15,7 +15,8 @@ class CustomerController extends BaseController
      */
     public function index()
     {
-        //
+        $customers = Customer::all();
+        return view('admin.customer.index', compact('customers'));
     }
 
     /**

@@ -82,8 +82,8 @@ class TourController extends BaseController
 
     public function show(Tour $tour)
     {
-        $tourDetail = TourDetail::where('tour_id',$tour->id)->first();
-        return [$tour, $tourDetail];
+        $tour->tour_detail;
+        return $tour;
     }
 
 
@@ -123,7 +123,6 @@ class TourController extends BaseController
 
         try {
             DB::transaction(function () {
-                $tour = new Tour;
                 $tour->name = Request::get('name');
                 $tour->thumbnail = Request::file('thumbnail')->getClientOriginalExtension();
                 $tour->hotel = Request::get('hotel');

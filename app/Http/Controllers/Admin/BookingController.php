@@ -14,7 +14,8 @@ class BookingController extends BaseController
      */
     public function index()
     {
-        //
+        $bookings = Booking::all();
+        return view('admin.booking.index', compact('bookings'));
     }
 
     /**
@@ -46,7 +47,8 @@ class BookingController extends BaseController
      */
     public function show(Booking $booking)
     {
-        //
+        $booking->customer;
+        return $booking;
     }
 
     /**
