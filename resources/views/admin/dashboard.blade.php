@@ -47,6 +47,7 @@
         <script src="admin/js/material-dashboard.min.js?v=2.1.0" type="text/javascript"></script>
         <!-- Material Dashboard DEMO methods, don't include it in your project! -->
         <script src="admin/demo/demo.js"></script>
+        <script src="admin/js/util.js"></script>
         <script>
             $(document).ready(function() {
               // Javascript method's body can be found in assets/js/demos.js

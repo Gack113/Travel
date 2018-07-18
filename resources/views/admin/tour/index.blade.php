@@ -55,7 +55,7 @@
                                         ${{$item->fare}}
                                     </td>
                                     <td>
-                                        
+                                        <a href="{{route('tours.edit',$item)}}" class="btn btn-warning">Edit</a>
                                     </td>
                                 </tr>
                             @endforeach

@@ -1,6 +1,5 @@
 @extends('admin.dashboard')
 @section('content')
-
 <style>
 
     .form-group #selectPic{
@@ -21,7 +20,7 @@
                 <p class="card-category">{{$fname}}</p>
             </div>
             <div class="card-body">
-                <form method="POST" action="{{route('tours.store')}}" enctype="multipart/form-data">
+                <form method="POST" action="{{!empty($tour)?route('tours.update',$tour):route('tours.store')}}" enctype="multipart/form-data" id="myForm">
                     @csrf
                     <div class="row">
                         <div class="col-md-8">
@@ -153,8 +152,6 @@
         </div>
     </div>
 </div>
-
-
 @endSection
 
 @section('js')
@@ -182,6 +179,10 @@
         filebrowserUploadUrl : '{{url("vendor/unisharp/laravel-ckeditor")}}/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
         filebrowserImageBrowseUrl : '{{url("vendor/unisharp/laravel-ckeditor")}}/filemanager/dialog.php?type=1&editor=ckeditor&fldr='
     }))
+
+    @if (!empty($tour))
+        objectForm({!! $tour !!})
+    @endif
 
 </script>
 @endsection
