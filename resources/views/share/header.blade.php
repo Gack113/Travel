@@ -35,7 +35,7 @@
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
 						<li><a href="{!! route('home') !!}">{{ __('index.home') }}</a></li>
-						<li><a href="{!! route('home') !!}">{{ __('index.tour') }}</a></li>
+						<li><a href="{!! route('tour-list') !!}">{{ __('index.tour') }}</a></li>
 					</ul>
 				</nav>					      		  
 		</div>
