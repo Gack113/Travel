@@ -25,7 +25,7 @@
                                     </li>
                                 </ul>
                             </div> -->
-                            <a href="#"><h4 class="title">{{$otd->name}}</h4></a>
+                            <a href="{{route('show',$otd->slug)}}"><h4 class="title">{{$otd->name}}</h4></a>
                             <!-- <p>
                                 Acres of Diamonds… you’ve read the famous story, or at least had it related to you. A farmer.
                             </p> -->

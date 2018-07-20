@@ -174,7 +174,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => '/home/nakhoa/workspace/Travel/storage/framework/cache/data',
+        'path' => 'E:\\Travel\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -279,12 +279,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/home/nakhoa/workspace/Travel/storage/app',
+        'root' => 'E:\\Travel\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/home/nakhoa/workspace/Travel/storage/app/public',
+        'root' => 'E:\\Travel\\storage\\app/public',
         'url' => 'localhost/storage',
         'visibility' => 'public',
       ),
@@ -329,13 +329,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => '/home/nakhoa/workspace/Travel/storage/logs/laravel.log',
+        'path' => 'E:\\Travel\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => '/home/nakhoa/workspace/Travel/storage/logs/laravel.log',
+        'path' => 'E:\\Travel\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 7,
       ),
@@ -387,7 +387,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => '/home/nakhoa/workspace/Travel/resources/views/vendor/mail',
+        0 => 'E:\\Travel\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -468,7 +468,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => '/home/nakhoa/workspace/Travel/storage/framework/sessions',
+    'files' => 'E:\\Travel\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -488,9 +488,9 @@
   array (
     'paths' => 
     array (
-      0 => '/home/nakhoa/workspace/Travel/resources/views',
+      0 => 'E:\\Travel\\resources\\views',
     ),
-    'compiled' => '/home/nakhoa/workspace/Travel/storage/framework/views',
+    'compiled' => 'E:\\Travel\\storage\\framework\\views',
   ),
   'trustedproxy' => 
   array (
