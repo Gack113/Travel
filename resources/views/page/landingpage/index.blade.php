@@ -1,9 +1,6 @@
 @extends('layout')
 @section('content')
 <style>
-    .section-gap {
-       padding: 30px 0;
-    }
     .block-title {
         font-family: 'Roboto', sans-serif;
         font-size: 14px;

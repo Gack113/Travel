@@ -10,13 +10,13 @@
         border-bottom: 2px solid #e29c04;
     }
 
-        .block-title a, .block-title span, .block-title label {
-            line-height: 17px;
-            display: inline-block;
-            padding: 7px 12px 4px 12px;
-            background-color: #e29c04;
-            color: #fff;
-        }
+    .block-title a, .block-title span, .block-title label {
+        line-height: 17px;
+        display: inline-block;
+        padding: 7px 12px 4px 12px;
+        background-color: #e29c04;
+        color: #fff;
+    }
 </style>
 <div class="container" style="padding-top:50px">
     <div class="row">
