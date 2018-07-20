@@ -66,7 +66,7 @@
         @foreach($recently_tour as $rcl)
             <div class="item-procol">
                 <div class="Frames">
-                    <a href="/tour/du-lich-co-to-3-ngay-2-dem-160.html" title="DU LỊCH CÔ TÔ 3 NGÀY 2 ĐÊM">
+                    <a href="{{route('show',$rcl->slug)}}" title="DU LỊCH CÔ TÔ 3 NGÀY 2 ĐÊM">
                         <img src="{{$rcl->thumbnail}}" alt="DU LỊCH CÔ TÔ 3 NGÀY 2 ĐÊM">
                     </a>
                 </div>

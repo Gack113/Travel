@@ -16,7 +16,7 @@
                             <img class="img-fluid" src="{{$rcl->thumbnail}}" alt="">
                         </div>
                         <div class="desc">
-                            <a href="#" class="price-btn">{{$rcl->fare}} vnd</a>
+                            <a href="{{route('show',$rcl->slug)}}" class="price-btn">{{$rcl->fare}} vnd</a>
                             <h4>{{$rcl->name}}</h4>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                             <img class="img-fluid" src="{{$dc->thumbnail}}" alt="" style="width:81px;height:48px">
                         </div>
                         <div class="details">
-                            <a href="blog-single.html"><h6>{{$dc->name}}</h6></a>
+                            <a href="{{route('show',$dc->slug)}}"><h6>{{$dc->name}}</h6></a>
                             <p>{{$dc->fare}} vnd OFF <span style="color:red;font-family: fantasy;">{{$dc->discount}} %</span></p>
                         </div>
                     </div>
