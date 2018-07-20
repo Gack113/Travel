@@ -12,7 +12,7 @@
                 @foreach($outstanding_tour as $otd)
                     <div class="single-recent-blog-post item">
                         <div class="thumb">
-                            <img class="img-fluid" src="{{$otd->thumbnail}}" alt="">
+                            <a href="{{route('show',$otd->slug)}}"><img class="img-fluid" src="{{$otd->thumbnail}}" alt=""></a>
                         </div>
                         <div class="details">
                             <!-- <div class="tags">

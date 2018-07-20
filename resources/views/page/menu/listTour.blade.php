@@ -54,7 +54,7 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
                         <div class="clearfix">
-                                {{$tours->links()}}
+                                {{$tours->links('page.menu.customPagination')}}
                         </div>
                 </div>
                 <div class="col-md-3"></div>
