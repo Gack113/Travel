@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Tour;
 use App\TourDetail;
+use App\Booking;
+use App\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -63,7 +65,7 @@ class PageController extends Controller
         return view('page.menu.book', ['tour'=> $tour]);
     }
 
-    public function postBook(Request $request, $tour){
+    public function postBook(Request $request, $slug){
 
         $validatedData = $request->validate(
             [
@@ -75,21 +77,22 @@ class PageController extends Controller
             ]
         );
 
+        $tour = Tour::where('slug', $slug)->first();
+
         try {
-            DB::transaction(function () {
+                DB::transaction( function() use ($tour) {
                 $customer = new Customer;
-                $customer->name = $request->name;
-                $customer->phone = $request->phone;
-                $customer->email = $request->email;
+                $customer->name = \Request::get('name');
+                $customer->phone = \Request::get('phone');
+                $customer->email = \Request::get('email');
                 $customer->save();
 
                 $booking = new Booking;
                 $booking->tour_id = $tour->id;
-                $booking->customer = $customer->id;
-                $booking->amount = $request->amount;
+                $booking->customer_id = $customer->id;
+                $booking->amount = \Request::get('amount');
 
                 $booking->save();
-
 
             });
             return redirect()->back()->with('success', ' Đặt Tour thành công');
