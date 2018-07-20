@@ -1,10 +1,10 @@
 <section class="recent-blog-area section-gap">
     <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="menu-content pb-60 col-lg-9">
-                <div class="title text-center">
-                    <h1 class="mb-10">{{ __('index.recentlyTour') }}</h1>
-                </div>
+        <div>
+            <div class="td-block-title-wrap">
+                <h4 class="block-title" style="background-color: white;">
+                    <span style="margin-right: 0px;">{{ __('index.recentlyTour') }}</span>
+                </h4>
             </div>
         </div>
         <div class="row">
