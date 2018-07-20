@@ -23,10 +23,9 @@
                             <th>
                                 Email
                             </th>
-                            <th>
-                                Detail
+                            <th class="th-actions text-right">
+                                Actions
                             </th>
-                            <th>Actions</th>
                         </thead>
                         <tbody>
                             @foreach($customers as $item)
@@ -43,16 +42,21 @@
                                     <td>
                                         {{$item->email}}
                                     </td>
-                                    <td>
-                                        <a href=""><button class="btn btn-primary btn-xs">Show</button></a>
-                                    </td>
                                     <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
+                                        <a href="{{route('customers.show', $item)}}">
+                                            <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Show Task">
+                                                <i class="material-icons">visibility</i>
+                                                <div class="ripple-container"></div>
+                                            </button>
+                                        </a>
+                                        <button type="button" rel="tooltip" title="" class="btn btn-warning btn-link btn-sm" data-original-title="Edit Task">
                                             <i class="material-icons">edit</i>
-                                        <div class="ripple-container"></div></button>
+                                            <div class="ripple-container"></div>
+                                        </button>
                                         <button type="button" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
                                             <i class="material-icons">close</i>
-                                        <div class="ripple-container"></div></button>
+                                            <div class="ripple-container"></div>
+                                        </button>
                                     </td>
                                 </tr>
                             @endforeach

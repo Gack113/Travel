@@ -22,6 +22,9 @@
             <div class="card-body">
                 <form method="POST" action="{{!empty($tour)?route('tours.update',$tour):route('tours.store')}}" enctype="multipart/form-data" id="myForm">
                     @csrf
+                    @if(!empty($tour))
+                        {{ method_field('PUT')}}
+                    @endif
                     <div class="row">
                         <div class="col-md-8">
                             <div class="form-group">
@@ -62,13 +65,13 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="bmd-label-floating">Giá</label>
-                                <input type="text" class="form-control" name="fare">
+                                <input type="number" class="form-control" name="fare" step="0.1">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="bmd-label-floating">Khuyến mãi (%)</label>
-                                <input type="text" class="form-control" name="discount">
+                                <input type="number" class="form-control" name="discount">
                             </div>
                         </div>
                         <div class="col-md-4">

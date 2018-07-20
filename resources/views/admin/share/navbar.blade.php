@@ -37,12 +37,15 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('logout')}}">
-                        <i class="material-icons">arrow_forward_ios</i>
-                        <p class="d-lg-none d-md-block">
-                            Logout
-                        </p>
-                    </a>
+                    <form action="{{route('logout')}}" method="post">
+                        @csrf
+                        <button class="ripple" type="submit" style="outline:none;background: transparent; border:none; cursor:pointer">
+                            <i class="material-icons">arrow_forward_ios</i>
+                            <p class="d-lg-none d-md-block">
+                                Logout
+                            </p>
+                        </button>
+                    </form>
                 </li>
             </ul>
         </div>

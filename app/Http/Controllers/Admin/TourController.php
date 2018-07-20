@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use App\Tour;
 use App\TourDetail;
+use App\Booking;
+use Storage;
 
 class TourController extends BaseController
 {
@@ -53,12 +55,14 @@ class TourController extends BaseController
             DB::transaction(function () {
                 $tour = new Tour;
                 $tour->name = Request::get('name');
-                $tour->thumbnail = Request::file('thumbnail')->getClientOriginalExtension();
+                $tour->thumbnail = time().'_'.Request::file('thumbnail')->getClientOriginalName();
                 $tour->hotel = Request::get('hotel');
                 $tour->transportation = Request::get('transportation');
                 $tour->duration = Request::get('duration');
                 $tour->fare = Request::get('fare');
                 $tour->schedule = Request::get('schedule');
+                $tour->discount = Request::get('discount');
+                $tour->description = Request::get('description');
                 $tour->slug = str_slug(Request::get('name'));
                 $tour->is_active = true;
                 $tour->save();
@@ -69,7 +73,7 @@ class TourController extends BaseController
                 $tourDetail->save();
 
                 $image = Request::file('thumbnail');
-                $name = time().'.'.$image->getClientOriginalExtension();
+                $name = $tour->thumbnail;
                 $image->move(public_path('/uploads'), $name);
 
             });
@@ -82,8 +86,7 @@ class TourController extends BaseController
 
     public function show(Tour $tour)
     {
-        $tour->tour_detail;
-        return $tour;
+        return view('admin.tour.show', compact('tour'));
     }
 
 
@@ -96,12 +99,11 @@ class TourController extends BaseController
     }
 
 
-    public function update(Request $request, Booking $booking)
+    public function update(Request $request, Tour $tour)
     {
         $validatedData = Request::validate(
             [
                 'name' => 'required',
-                'thumbnail' => 'required',
                 'hotel' => 'required',
                 'transportation' => 'required',
                 'duration' => 'required',
@@ -111,42 +113,51 @@ class TourController extends BaseController
             ],
             [
                 'name.required' => 'Tiêu đề không được trống',
-                'thumbnail.required' => 'Vui lòng chọn ảnh',
                 'hotel' => 'Vui lòng nhập thông tin khách sạn',
                 'transportation.required' => 'Vui lòng nhập phương tiện di chuyển',
                 'duration.required' => 'Vui lòng nhập thời gian tour kéo dài',
                 'fare.required' => 'Vui lòng nhập giá',
+                'fare.numeric' => 'Giá phải là số',
                 'schedule.required' => 'Vui lòng nhập lịch trình',
                 'content.required' => 'Vui lòng viết bài'
             ]
         );
 
         try {
-            DB::transaction(function () {
+            DB::transaction(function () use ($tour) {
+                $oldImage = $tour->thumbnail;
                 $tour->name = Request::get('name');
-                $tour->thumbnail = Request::file('thumbnail')->getClientOriginalExtension();
+                if (Request::hasFile('thumbnail'))
+                    $tour->thumbnail = time().'_'.Request::file('thumbnail')->getClientOriginalName();
                 $tour->hotel = Request::get('hotel');
                 $tour->transportation = Request::get('transportation');
                 $tour->duration = Request::get('duration');
                 $tour->fare = Request::get('fare');
                 $tour->schedule = Request::get('schedule');
+                $tour->discount = Request::get('discount');
+                $tour->description = Request::get('description');
                 $tour->slug = str_slug(Request::get('name'));
                 $tour->is_active = true;
                 $tour->save();
 
-                $tourDetail = new TourDetail;
+                $tourDetail = $tour->tour_detail;
                 $tourDetail->tour_id = $tour->id;    
-                $tourDetail->content = Request::get('content');    
+                $tourDetail->content = Request::get('content');
                 $tourDetail->save();
 
-                $image = Request::file('thumbnail');
-                $name = time().'.'.$image->getClientOriginalExtension();
-                $image->move(public_path('/uploads'), $name);
+                if (Request::hasFile('thumbnail')){
+                    $image = Request::file('thumbnail');
+                    $name = $tour->thumbnail;
+                    $image->move(public_path('/uploads'), $name);
+                    if (Storage::exists('/uploads/'.$oldImage))
+                        Storage::delete('/uploads/'.$oldImage);
+                }
 
             });
-            return redirect()->route('tours.create')->with('success', 'Tour thêm thành công');
+            return redirect()->route('tours.edit', $tour)->with('success', 'Tour cập nhật thành công');
         } catch (\Exception $e) {
-            return redirect()->route('tours.create')->with('error', 'Tour thêm không thành công! Vui lòng thử lại sau.');
+            dd($e);
+            return redirect()->route('tours.edit', $tour)->with('error', 'Tour cập nhật không thành công! Vui lòng thử lại sau.');
         }
     }
 
@@ -154,7 +165,7 @@ class TourController extends BaseController
     public function destroy(Tour $tour)
     {
         if ($tour->delete())
-            return redirect()->route('tours')->with('success', 'Xóa thành công');
-        return redirect()->route('tours')->with('error', 'Xóa không thành công! Vui lòng thử lại sau.');
+            return redirect()->route('tours.index')->with('success', 'Xóa thành công');
+        return redirect()->route('tours.index')->with('error', 'Xóa không thành công! Vui lòng thử lại sau.');
     }
 }

@@ -3,6 +3,27 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card">
+            @if (session('success'))
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <i class="material-icons">close</i>
+                    </button>
+                    <span>
+                        {{session('success')}}
+                    </span> 
+                </div>
+            @endif
+
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <i class="material-icons">close</i>
+                    </button>
+                    <span>
+                        {{session('error')}}
+                    </span> 
+                </div>
+            @endif
             <div class="card-header card-header-primary">
                 <div class="nav-tabs-navigation">
                     <div class="nav-tabs-wrapper">
@@ -41,7 +62,7 @@
                             <th>
                                 Fare
                             </th>
-                            <th>
+                            <th class="text-right">
                                 Actions
                             </th>
                         </thead>
@@ -67,12 +88,26 @@
                                         ${{$item->fare}}
                                     </td>
                                     <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
-                                            <i class="material-icons">edit</i>
-                                        <div class="ripple-container"></div></button>
-                                        <button type="button" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
-                                            <i class="material-icons">close</i>
-                                        <div class="ripple-container"></div></button>
+                                        <form action="{{route('tours.destroy', $item)}}" method="POST">
+                                            <a href="{{route('tours.show', $item)}}">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Show Task">
+                                                    <i class="material-icons">visibility</i>
+                                                    <div class="ripple-container"></div>
+                                                </button>
+                                            </a>
+                                            <a href="{{route('tours.edit', $item)}}">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
+                                                    <i class="material-icons">edit</i>
+                                                    <div class="ripple-container"></div>
+                                                </button>
+                                            </a>
+                                            @csrf
+                                            {{ method_field('DELETE')}}
+                                            <button type="submit" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
+                                                <i class="material-icons">close</i>
+                                                <div class="ripple-container"></div>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
