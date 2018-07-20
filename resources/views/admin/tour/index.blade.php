@@ -4,8 +4,20 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header card-header-primary">
-                <h4 class="card-title ">Tours Management</h4>
-                <p class="card-category">{{count($tours)}} tours available</p>
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <h4 class="card-title ">Tours Management</h4>
+                        <p class="card-category">{{count($tours)}} tours available</p>
+                        <ul class="nav nav-tabs" data-tabs="tabs">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('tours.create')}}">
+                                    <i class="material-icons">playlist_add</i> New
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div class="card-body">
                 <div class="table-responsive">

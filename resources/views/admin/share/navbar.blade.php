@@ -40,7 +40,7 @@
                     <a class="nav-link" href="{{route('logout')}}">
                         <i class="material-icons">arrow_forward_ios</i>
                         <p class="d-lg-none d-md-block">
-                            Account
+                            Logout
                         </p>
                     </a>
                 </li>
