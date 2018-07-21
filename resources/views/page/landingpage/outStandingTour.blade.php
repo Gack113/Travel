@@ -1,10 +1,12 @@
 <section class="recent-blog-area section-gap">
     <div class="container">
-        <div>
-            <div class="td-block-title-wrap">
-                <h4 class="block-title" style="background-color: white;">
-                    <span style="margin-right: 0px;">{{ __('index.recentlyTour') }}</span>
-                </h4>
+        <div class="col-lg-8">
+            <div>
+                <div class="td-block-title-wrap">
+                    <h4 class="block-title" style="background-color: white;">
+                        <span style="margin-right: 0px;">{{ __('index.recentlyTour') }}</span>
+                    </h4>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -15,20 +17,7 @@
                             <a href="{{route('show',$otd->slug)}}"><img class="img-fluid" src="{{$otd->thumbnail}}" alt=""></a>
                         </div>
                         <div class="details">
-                            <!-- <div class="tags">
-                                <ul>
-                                    <li>
-                                        <a href="#">Chi tiết</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Life Style</a>
-                                    </li>
-                                </ul>
-                            </div> -->
                             <a href="{{route('show',$otd->slug)}}"><h4 class="title">{{$otd->name}}</h4></a>
-                            <!-- <p>
-                                Acres of Diamonds… you’ve read the famous story, or at least had it related to you. A farmer.
-                            </p> -->
                             <h6 class="date">{{$otd->fare}} vnd</h6>
                         </div>
                     </div>

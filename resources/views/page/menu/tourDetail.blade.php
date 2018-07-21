@@ -39,19 +39,23 @@
             </div>
             <div>
                 <div class="td-block-title-wrap">
-                    <h4 class="block-title" style="background-color: white;"><span style="margin-right: 0px;">Tour liên quan</span></h4>
+                    <h4 class="block-title" style="background-color: white;"><span style="margin-right: 0px;">{{ __('index.relateTour') }}</span></h4>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12 mt-sm-30 typo-sec">
-                    <div class="" style="padding-bottom: 10px;">
-                        <ul class="unordered-list">
-                            <li>Fta Keys</li>
-                            <li>For Women Only Your Computer Usage</li>                           
-                            <li>Dealing With Technical Support 10 Useful Tips</li>
-                            <li>Make Myspace Your Best Designed Space</li>
-                            <li>Cleaning And Organizing Your Computer</li>
-                        </ul>
+            <div class="container">
+                <div class="row">
+                    <div class="active-recent-blog-carusel">
+                        @foreach($relate_tour as $otd)
+                            <div class="single-recent-blog-post item">
+                                <div class="thumb">
+                                    <a href="{{route('show',$otd->slug)}}"><img class="img-fluid" src="{{$otd->thumbnail}}" alt=""></a>
+                                </div>
+                                <div class="details">
+                                    <a href="{{route('show',$otd->slug)}}"><h4 class="title">{{$otd->name}}</h4></a>
+                                    <h6 class="date">{{$otd->fare}} vnd</h6>
+                                </div>
+                            </div>
+                        @endforeach  
                     </div>
                 </div>
             </div>
@@ -64,7 +68,7 @@
                         <li>
                             <a href="#" class="d-flex justify-content-between">
                                 <p>{{ __('index.booked') }} <span class="fa fa-check-square-o"></span></p>
-                                <p>{{$tour->booked}}</p>
+                                <p>{{count($tour->bookings)}}</p>
                             </a>
                         </li>
                         <li>

@@ -36,7 +36,7 @@
                             </li>
                             <li class="d-flex justify-content-between align-items-center">
                                 <span>{{ __('index.booked') }}</span>
-                                <span>{{$tour->booked}}</span>
+                                <span>{{count($tour->bookings)}}</span>
                             </li>                              								
                             <li class="d-flex justify-content-between align-items-center">
                                 <span>{{ __('index.fare') }}</span>
