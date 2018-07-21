@@ -36,6 +36,12 @@
                     <p>Customers Management</p>
                 </a>
             </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="{{route('services.index')}}">
+                    <i class="material-icons">settings</i>
+                    <p>Services Management</p>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

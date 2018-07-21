@@ -22,6 +22,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::resource('bookings', 'BookingController');
     Route::resource('customers', 'CustomerController');
     Route::resource('users', 'UserController');
+    Route::resource('services', 'ServiceController');
 
 });
 
