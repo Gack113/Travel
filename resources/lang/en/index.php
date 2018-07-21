@@ -17,5 +17,6 @@ return [
   'numberPhone' => 'Numner Phone',
   'email' => 'Email',
   'numberOfPeople' => 'Number Of People',
-  'listTour' => 'All tour'
+  'listTour' => 'All tour',
+  'relateTour' => 'Relate tour'
 ];

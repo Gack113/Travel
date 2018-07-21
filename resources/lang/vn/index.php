@@ -17,5 +17,6 @@ return [
   'numberPhone' => 'Số Điện Thoại',
   'email' => 'Email',
   'numberOfPeople' => 'Số Lượng Người',
-  'listTour' => 'Danh Sách Tất Cả Các Tour'
+  'listTour' => 'Danh Sách Tất Cả Các Tour',
+  'relateTour' => 'Các tour liên quan'
 ];

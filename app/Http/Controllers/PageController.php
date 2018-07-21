@@ -16,10 +16,12 @@ class PageController extends Controller
      * 
      */
     public function index() {
-        $outstandingTour = Tour::where('is_active', 1)
-                                ->orderBy('booked', 'DESC')
-                                ->take(12)
-                                ->get();
+        $outstandingTour = DB::select('SELECT tours.id, tours.name, tours.slug, tours.thumbnail, tours.hotel, tours.transportation, tours.duration, tours.fare, tours.schedule, tours.discount, tours.description, count(bookings.tour_id) as booked
+                                        from tours left join bookings
+                                        on tours.id = bookings.tour_id and tours.is_active = 1
+                                        group by tours.id, tours.name, tours.slug, tours.thumbnail, tours.hotel, tours.transportation, tours.duration, tours.fare, tours.schedule, tours.discount, tours.description
+                                        order by booked desc
+                                        limit 12');
 
         $recentlyTour = Tour::where('is_active', 1)
                             ->orderBy('created_at', 'DESC')
@@ -49,7 +51,13 @@ class PageController extends Controller
                             ->orderBy('discount', 'DESC')
                             ->take(5)
                             ->get();
-            return view('page/menu/tourDetail', ['tour' => $tour, 'discount_tour' => $discountTours]);
+
+            $relateTours = Tour::where('is_active', 1)
+                            ->where('duration', $tour['duration'])
+                            ->take(5)
+                            ->get();
+
+            return view('page/menu/tourDetail', ['tour' => $tour, 'discount_tour' => $discountTours, 'relate_tour' => $relateTours]);
         } 
         
         return redirect()->route('home');

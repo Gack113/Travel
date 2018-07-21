@@ -66,7 +66,7 @@
                         <li>
                             <a href="#" class="d-flex justify-content-between">
                                 <p>{{ __('index.booked') }} <span class="fa fa-check-square-o"></span></p>
-                                <p>{{$tour->booked}}</p>
+                                <p>{{count($tour->bookings)}}</p>
                             </a>
                         </li>
                         <li>
