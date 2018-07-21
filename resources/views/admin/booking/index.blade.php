@@ -53,7 +53,9 @@
                             <th>
                                 State
                             </th>
-                            <th>Actions</th>
+                            <th>
+                                Actions
+                            </th>
                         </thead>
                         <tbody>
                             @foreach($bookings as $item)
@@ -70,7 +72,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="{{route('customers.show', $item->customer)}}">
+                                        <a href="{{route('customers.edit', $item->customer)}}">
                                             <button rel="tooltip" title="" class="btn btn-primary btn-link btn-sm">
                                                 {{$item->customer->name}}
                                                 <div class="ripple-container"></div>
@@ -87,7 +89,12 @@
                                         {{$item->depart_at}}
                                     </td>
                                     <td>
-                                        {{$item->state}}
+                                        @if($item->state == 1)
+                                            Đang đợi ngày đi
+                                        @elseif($item->state == 2)
+                                            Đang trong quá trình
+                                        @else
+                                            Đã kết thúc tour
                                     </td>
                                     <td class="td-actions text-right">
                                         <form action="{{route('bookings.destroy', $item)}}" method="POST">

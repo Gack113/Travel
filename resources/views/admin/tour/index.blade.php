@@ -90,20 +90,20 @@
                                     <td class="td-actions text-right">
                                         <form action="{{route('tours.destroy', $item)}}" method="POST">
                                             <a href="{{route('tours.show', $item)}}">
-                                                <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Show Task">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm">
                                                     <i class="material-icons">visibility</i>
                                                     <div class="ripple-container"></div>
                                                 </button>
                                             </a>
                                             <a href="{{route('tours.edit', $item)}}">
-                                                <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm">
                                                     <i class="material-icons">edit</i>
                                                     <div class="ripple-container"></div>
                                                 </button>
                                             </a>
                                             @csrf
                                             {{ method_field('DELETE')}}
-                                            <button type="submit" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
+                                            <button type="submit" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm">
                                                 <i class="material-icons">close</i>
                                                 <div class="ripple-container"></div>
                                             </button>

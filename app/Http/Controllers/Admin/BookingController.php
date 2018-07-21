@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Booking;
+use App\Tour;
+use App\Customer;
 use Illuminate\Http\Request;
 
 class BookingController extends BaseController
@@ -59,7 +61,11 @@ class BookingController extends BaseController
      */
     public function edit(Booking $booking)
     {
-        //
+        $cname = 'Booking';
+        $fname = 'Edit';
+        $tours = Tour::where('is_active',1)->get();
+        $customers = Customer::all();
+        return view('admin.booking.form', compact('tours', 'customers', 'booking', 'cname', 'fname'));
     }
 
     /**
@@ -71,7 +77,31 @@ class BookingController extends BaseController
      */
     public function update(Request $request, Booking $booking)
     {
-        //
+        $validatedData = $request->validate(
+            [
+                'tour_id' => 'required',
+                'customer_id' => 'required',
+                'depart_at' => 'required',
+                'state' => 'required'
+            ],
+            [
+                'tour_id.required' => 'vui lòng chọn tour được đăt',
+                'customer_id.required' => 'Vui lòng chọn khách hàng đặt tour',
+                'depart_at.required' => 'Vui lòng chọn ngày đi',
+                'state.required' => 'Vui lòng chọn trạng thái booking'
+            ]
+        );
+
+        $booking->tour_id = $request->tour_id;
+        $booking->customer_id = $request->customer_id;
+        if ($request->depart_at != null)
+            $booking->depart_at = $request->depart_at;
+        $booking->state = $request->state;
+
+        if ($booking->save())
+            return redirect()->back()->with('success', 'Booking cập nhật thành công');
+        return redirect()->back()->with('error', 'Booking cập nhật không thành công! Vui lòng thử lại sau.');
+        
     }
 
     /**

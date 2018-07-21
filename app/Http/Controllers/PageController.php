@@ -91,6 +91,7 @@ class PageController extends Controller
                 $booking->tour_id = $tour->id;
                 $booking->customer_id = $customer->id;
                 $booking->amount = \Request::get('amount');
+                $booking->state = 1;
                 $booking->save();
 
             });
