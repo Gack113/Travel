@@ -3,6 +3,27 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card">
+            @if (session('success'))
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <i class="material-icons">close</i>
+                    </button>
+                    <span>
+                        {{session('success')}}
+                    </span> 
+                </div>
+            @endif
+
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <i class="material-icons">close</i>
+                    </button>
+                    <span>
+                        {{session('error')}}
+                    </span> 
+                </div>
+            @endif
             <div class="card-header card-header-primary">
                 <h4 class="card-title ">Customers Management</h4>
                 <p class="card-category">{{count($customers)}} customers available</p>
@@ -43,20 +64,20 @@
                                         {{$item->email}}
                                     </td>
                                     <td class="td-actions text-right">
-                                        <a href="{{route('customers.show', $item)}}">
-                                            <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Show Task">
-                                                <i class="material-icons">visibility</i>
+                                        <form action="{{route('customers.destroy', $item)}}" method="POST">
+                                            <a href="{{route('customers.edit', $item)}}">
+                                                <button type="button" rel="tooltip" class="btn btn-primary btn-link btn-sm" data-original-title="Edit">
+                                                    <i class="material-icons">edit</i>
+                                                    <div class="ripple-container"></div>
+                                                </button>
+                                            </a>
+                                            @csrf
+                                            {{ method_field('DELETE')}}
+                                            <button type="submit" rel="tooltip" class="btn btn-danger btn-link btn-sm" data-original-title="Delete">
+                                                <i class="material-icons">close</i>
                                                 <div class="ripple-container"></div>
                                             </button>
-                                        </a>
-                                        <button type="button" rel="tooltip" title="" class="btn btn-warning btn-link btn-sm" data-original-title="Edit Task">
-                                            <i class="material-icons">edit</i>
-                                            <div class="ripple-container"></div>
-                                        </button>
-                                        <button type="button" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
-                                            <i class="material-icons">close</i>
-                                            <div class="ripple-container"></div>
-                                        </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

@@ -82,6 +82,8 @@ class BookingController extends BaseController
      */
     public function destroy(Booking $booking)
     {
-        //
+        if ($booking->delete())
+            return redirect()->route('bookings.index')->with('success', 'Xóa thành công');
+        return redirect()->route('bookings.index')->with('error', 'Xóa không thành công! Vui lòng thử lại sau.');
     }
 }

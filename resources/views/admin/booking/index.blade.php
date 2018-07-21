@@ -3,6 +3,27 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card">
+            @if (session('success'))
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <i class="material-icons">close</i>
+                    </button>
+                    <span>
+                        {{session('success')}}
+                    </span> 
+                </div>
+            @endif
+
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <i class="material-icons">close</i>
+                    </button>
+                    <span>
+                        {{session('error')}}
+                    </span> 
+                </div>
+            @endif
             <div class="card-header card-header-primary">
                 <h4 class="card-title ">Bookings Management</h4>
                 <p class="card-category">{{count($bookings)}} bookings available</p>
@@ -41,10 +62,20 @@
                                         {{$item->id}}
                                     </td>
                                     <td>
-                                        {{$item->tour->name}}
+                                        <a href="{{route('tours.show', $item->tour)}}">
+                                            <button rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" >
+                                                {{$item->tour->name}}
+                                                <div class="ripple-container"></div>
+                                            </button>
+                                        </a>
                                     </td>
                                     <td>
-                                        {{$item->customer->name}}
+                                        <a href="{{route('customers.show', $item->customer)}}">
+                                            <button rel="tooltip" title="" class="btn btn-primary btn-link btn-sm">
+                                                {{$item->customer->name}}
+                                                <div class="ripple-container"></div>
+                                            </button>
+                                        </a>
                                     </td>
                                     <td>
                                         {{$item->amount}}
@@ -59,12 +90,20 @@
                                         {{$item->state}}
                                     </td>
                                     <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
-                                            <i class="material-icons">edit</i>
-                                        <div class="ripple-container"></div></button>
-                                        <button type="button" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
-                                            <i class="material-icons">close</i>
-                                        <div class="ripple-container"></div></button>
+                                        <form action="{{route('bookings.destroy', $item)}}" method="POST">
+                                            <a href="{{route('bookings.edit', $item)}}">
+                                                <button type="button" rel="tooltip" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
+                                                    <i class="material-icons">edit</i>
+                                                    <div class="ripple-container"></div>
+                                                </button>
+                                            </a>
+                                            @csrf
+                                            {{ method_field('DELETE')}}
+                                            <button type="submit" rel="tooltip" class="btn btn-danger btn-link btn-sm">
+                                                <i class="material-icons">close</i>
+                                                <div class="ripple-container"></div>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

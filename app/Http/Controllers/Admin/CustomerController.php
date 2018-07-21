@@ -82,6 +82,8 @@ class CustomerController extends BaseController
      */
     public function destroy(Customer $customer)
     {
-        //
+        if ($customer->delete())
+            return redirect()->route('customers.index')->with('success', 'Xóa thành công');
+        return redirect()->route('customers.index')->with('error', 'Xóa không thành công! Vui lòng thử lại sau.');
     }
 }

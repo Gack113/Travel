@@ -13,7 +13,7 @@
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{route('users.show', Auth::user())}}">
                     <i class="material-icons">person</i>
                     <p>User Profile</p>
                 </a>
@@ -34,12 +34,6 @@
                 <a class="nav-link" href="{{route('customers.index')}}">
                     <i class="material-icons">people</i>
                     <p>Customers Management</p>
-                </a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="">
-                    <i class="material-icons">notifications</i>
-                    <p>Notifications</p>
                 </a>
             </li>
         </ul>
