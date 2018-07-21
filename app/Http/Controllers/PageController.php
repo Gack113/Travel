@@ -6,6 +6,7 @@ use App\Tour;
 use App\TourDetail;
 use App\Booking;
 use App\Customer;
+use App\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -101,6 +102,12 @@ class PageController extends Controller
                 $booking->amount = \Request::get('amount');
                 $booking->state = 1;
                 $booking->save();
+
+                $notify = new Notification;
+                $notify->title = 'Có lượt book mới trên tour "'.$tour->name. '" vào lúc '.\Carbon\Carbon::now();
+                $notify->booking_id = $booking->id;
+                $notify->state = 0;
+                $notify->save();
 
             });
             return redirect()->back()->with('success', ' Đặt Tour thành công');

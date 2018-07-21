@@ -13,4 +13,8 @@ class Booking extends Model
     public function tour(){
         return $this->belongsTo('App\Tour');
     }
+
+    public function notifycation(){
+        return $this->hasOne('App\Notification');
+    }
 }

@@ -95,6 +95,7 @@
                                             Đang trong quá trình
                                         @else
                                             Đã kết thúc tour
+                                        @endif
                                     </td>
                                     <td class="td-actions text-right">
                                         <form action="{{route('bookings.destroy', $item)}}" method="POST">

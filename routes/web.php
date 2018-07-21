@@ -23,6 +23,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::resource('customers', 'CustomerController');
     Route::resource('users', 'UserController');
     Route::resource('services', 'ServiceController');
+    Route::resource('notifications', 'NotificationController');
 
 });
 

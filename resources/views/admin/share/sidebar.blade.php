@@ -42,6 +42,12 @@
                     <p>Services Management</p>
                 </a>
             </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="{{route('notifications.index')}}">
+                    <i class="material-icons">notifications</i>
+                    <p>Notifications Management</p>
+                </a>
+            </li>
         </ul>
     </div>
 </div>
