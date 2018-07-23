@@ -465,7 +465,7 @@
   'session' => 
   array (
     'driver' => 'file',
-    'lifetime' => '120',
+    'lifetime' => '15',
     'expire_on_close' => false,
     'encrypt' => false,
     'files' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\framework/sessions',
