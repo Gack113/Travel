@@ -4,7 +4,7 @@
     'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
-    'url' => 'travel.ssv',
+    'url' => 'tourdulich.herokuapp.com',
     'timezone' => 'UTC',
     'locale' => 'vn',
     'alt_langs' => 
@@ -285,7 +285,7 @@
       array (
         'driver' => 'local',
         'root' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\app/public',
-        'url' => 'travel.ssv/storage',
+        'url' => 'tourdulich.herokuapp.com/storage',
         'visibility' => 'public',
       ),
       's3' => 
