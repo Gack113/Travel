@@ -46,6 +46,7 @@
                     </div>
                 </div>
             </div>
+            @endforeach
             <br> <hr>
             <div class="row">
                 <div class="col-md-3"></div>
