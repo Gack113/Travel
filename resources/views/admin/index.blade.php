@@ -15,7 +15,7 @@
             <div class="card-footer">
                 <div class="stats">
                     <i class="material-icons text-danger">warning</i>
-                    <a href="#pablo">Get More Space...</a>
+                    <a href="{{route('dashboard')}}">Get More Space...</a>
                 </div>
             </div>
         </div>
@@ -130,19 +130,19 @@
                         <span class="nav-tabs-title">Tasks:</span>
                         <ul class="nav nav-tabs" data-tabs="tabs">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#profile" data-toggle="tab">
+                                <a class="nav-link active" href="{{route('dashboard')}}" data-toggle="tab">
                                     <i class="material-icons">bug_report</i> Bugs
                                     <div class="ripple-container"></div>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#messages" data-toggle="tab">
+                                <a class="nav-link" href="{{route('dashboard')}}" data-toggle="tab">
                                     <i class="material-icons">code</i> Website
                                     <div class="ripple-container"></div>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#settings" data-toggle="tab">
+                                <a class="nav-link" href="{{route('dashboard')}}" data-toggle="tab">
                                     <i class="material-icons">cloud</i> Server
                                     <div class="ripple-container"></div>
                                 </a>
