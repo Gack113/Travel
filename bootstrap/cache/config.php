@@ -174,7 +174,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\framework/cache/data',
+        'path' => '/home/nakhoa/workspace/Travel/storage/framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -279,12 +279,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\Bao\\Desktop\\travel\\public',
+        'root' => '/home/nakhoa/workspace/Travel/public',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\app/public',
+        'root' => '/home/nakhoa/workspace/Travel/storage/app/public',
         'url' => 'tourdulich.herokuapp.com/storage',
         'visibility' => 'public',
       ),
@@ -329,13 +329,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\logs/laravel.log',
+        'path' => '/home/nakhoa/workspace/Travel/storage/logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\logs/laravel.log',
+        'path' => '/home/nakhoa/workspace/Travel/storage/logs/laravel.log',
         'level' => 'debug',
         'days' => 7,
       ),
@@ -387,7 +387,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\Users\\Bao\\Desktop\\travel\\resources\\views/vendor/mail',
+        0 => '/home/nakhoa/workspace/Travel/resources/views/vendor/mail',
       ),
     ),
   ),
@@ -468,7 +468,7 @@
     'lifetime' => '15',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\framework/sessions',
+    'files' => '/home/nakhoa/workspace/Travel/storage/framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -488,9 +488,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\Users\\Bao\\Desktop\\travel\\resources\\views',
+      0 => '/home/nakhoa/workspace/Travel/resources/views',
     ),
-    'compiled' => 'C:\\Users\\Bao\\Desktop\\travel\\storage\\framework\\views',
+    'compiled' => '/home/nakhoa/workspace/Travel/storage/framework/views',
   ),
   'trustedproxy' => 
   array (
